@@ -39,9 +39,11 @@ This app relies on the following npm packages:
 * moment
 * node-spotify-api
 
+## Demo
+
+For a demonstration of the project in action please click the link below.
 
 https://youtu.be/uEa9r1utd1Y
-
 
 ## Contact Information
 
