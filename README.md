@@ -40,6 +40,9 @@ This app relies on the following npm packages:
 * node-spotify-api
 
 
+https://youtu.be/uEa9r1utd1Y
+
+
 ## Contact Information
 
 The project is maintained by George Arredondo.
