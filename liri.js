@@ -41,9 +41,31 @@ if (command === "concert-this") {
     var movieQueryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
     
     if (userInput === ""){
-        axios.get("http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy").then(movieInfo);
+        axios.get("http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy").then(
+            function(response){
+                console.log("Movie Title: " + response.data.Title);
+                console.log("Release Year: " + response.data.Year);
+                console.log("IMDB Rating: " + response.data.imdbRating);
+                console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                console.log("Produced in: " + response.data.Country);
+                console.log("Language: " + response.data.Language);
+                console.log("Plot: " + response.data.Plot);
+                console.log("Actors: " + response.data.Actors);
+            }
+        );
     } else {
-        axios.get(movieQueryUrl).then(movieInfo);
+        axios.get(movieQueryUrl).then(
+            function(response){
+                console.log("Movie Title: " + response.data.Title);
+                console.log("Release Year: " + response.data.Year);
+                console.log("IMDB Rating: " + response.data.imdbRating);
+                console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                console.log("Produced in: " + response.data.Country);
+                console.log("Language: " + response.data.Language);
+                console.log("Plot: " + response.data.Plot);
+                console.log("Actors: " + response.data.Actors);
+            }
+        );
     }
     
 } else if (command === "do-what-it-says"){
@@ -61,19 +83,7 @@ if (command === "concert-this") {
 
 // global functions =====================================================
 
-var movieInfo = function(response){
-    console.log("Movie Title: " + response.data.Title);
-    console.log("Release Year: " + response.data.Year);
-    console.log("IMDB Rating: " + response.data.imdbRating);
-    console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
-    console.log("Produced in: " + response.data.Country);
-    console.log("Language: " + response.data.Language);
-    console.log("Plot: " + response.data.Plot);
-    console.log("Actors: " + response.data.Actors);
-}
-
-
-// function movieInfo (response){
+// var movieInfo = function(response){
 //     console.log("Movie Title: " + response.data.Title);
 //     console.log("Release Year: " + response.data.Year);
 //     console.log("IMDB Rating: " + response.data.imdbRating);
@@ -83,6 +93,8 @@ var movieInfo = function(response){
 //     console.log("Plot: " + response.data.Plot);
 //     console.log("Actors: " + response.data.Actors);
 // }
+
+
 
 function spotifySong(songName){
     if (songName === ""){
