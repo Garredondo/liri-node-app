@@ -27,7 +27,7 @@ Movie-this added with a movie title will create a queryURL which is then sent th
     * Plot of the movie.
     * Actors in the movie.
 
-Do-what-it-says reads the random.txt file and runs a spotify-this-song search on the song "I Want it That Way."
+Do-what-it-says reads the random.txt file and runs a spotify-this-song search of the song "I Want it That Way."
 
 ## Usefulness of Project
 
