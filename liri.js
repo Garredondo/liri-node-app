@@ -57,14 +57,15 @@ if (command === "concert-this") {
 
 function spotifySong(songName){
     if (songName === ""){
-        songName = 'The Sign';
+        songName = 'Ace of Base The Sign';
         spotify.search({ type: 'track', query: songName, limit: 10 }, function (err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
+
             var songInfo = data.tracks.items;
             
-            console.log("Artist(s): " + songInfo[0].artists[0].name);
+            console.log("\n" + "Artist(s): " + songInfo[0].artists[0].name);
             console.log("Song Name: " + songInfo[0].name);
             console.log("Preview Link: " + songInfo[0].preview_url);
             console.log("Album: " + songInfo[0].album.name);
@@ -76,7 +77,7 @@ function spotifySong(songName){
             }
             var songInfo = data.tracks.items;
             
-            console.log("Artist(s): " + songInfo[0].artists[0].name);
+            console.log("\n" + "Artist(s): " + songInfo[0].artists[0].name);
             console.log("Song Name: " + songInfo[0].name);
             console.log("Preview Link: " + songInfo[0].preview_url);
             console.log("Album: " + songInfo[0].album.name);
@@ -90,7 +91,7 @@ function movieSearch(movieTitle){
     if (movieTitle === ""){
         axios.get("http://www.omdbapi.com/?t=Mr.+Nobody&y=&plot=short&apikey=trilogy").then(
             function(response){
-                console.log("Movie Title: " + response.data.Title);
+                console.log("\n" + "Movie Title: " + response.data.Title);
                 console.log("Release Year: " + response.data.Year);
                 console.log("IMDB Rating: " + response.data.imdbRating);
                 console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
@@ -103,7 +104,7 @@ function movieSearch(movieTitle){
     } else {
         axios.get(movieQueryUrl).then(
             function(response){
-                console.log("Movie Title: " + response.data.Title);
+                console.log("\n" + "Movie Title: " + response.data.Title);
                 console.log("Release Year: " + response.data.Year);
                 console.log("IMDB Rating: " + response.data.imdbRating);
                 console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
